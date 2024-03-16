@@ -7,7 +7,7 @@ string makeN() {
     string n;
     string nElement;
     random_device rd;
-    mt19937 gen(rd());
+    mt19937_64 gen(rd());
     uniform_int_distribution<int> dis(0, 9);
 
     for(int i = 0; i < 3; i++) {
