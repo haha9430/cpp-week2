@@ -12,8 +12,8 @@ int main() {
   int strike = 0; // 스트라이크의 개수
   int ball = 0;   // 볼의 개수
 
-  cout << "Enter a answer: ";
-  cin >> answer;
+  answer = makeN();
+  cout << "Answer is " << answer << endl;
 
   while (true) {
     cout << "Enter a guess: ";
