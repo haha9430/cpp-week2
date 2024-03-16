@@ -11,22 +11,28 @@ int main() {
   string guess;   // 사용자의 대답
   int strike = 0; // 스트라이크의 개수
   int ball = 0;   // 볼의 개수
+  int turnN = 5;
 
   answer = makeN();
-  cout << "Answer is " << answer << endl;
 
-  while (true) {
+  while (turnN > 0) {
+    cout << turnN << " chances left." << endl;
     cout << "Enter a guess: ";
     cin >> guess;
 
     if (answer.compare(guess) == 0) {
+      cout << "You win!" << endl;
       break;
     } else {
       cout << "Strikes: " << isStrike(answer, guess) << ", "<< "Balls: " << isBall(answer, guess) << endl;
     }
+    turnN--;
+    if (turnN == 0) {
+      cout << "You lose!" << endl;
+    }
   }
 
-  cout << "You win!" << endl;
+
 
   return 0;
 }
