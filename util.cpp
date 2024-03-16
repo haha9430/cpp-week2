@@ -1,13 +1,15 @@
 #include <iostream>
 #include <random>
 #include <string>
+#include <ctime>
+
 using namespace std;
 
 string makeN() {
     string n;
     string nElement;
-    random_device rd;
-    mt19937_64 gen(rd());
+    
+    mt19937_64 gen((unsigned int)time(NULL));
     uniform_int_distribution<int> dis(0, 9);
 
     for(int i = 0; i < 3; i++) {
