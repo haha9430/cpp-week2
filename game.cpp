@@ -35,15 +35,15 @@ int isBall(string answer, string guess) {
     arrayGuess[0] = guess[0] - '0';
     arrayGuess[1] = guess[1] - '0';
     arrayGuess[2] = guess[2] - '0';
-    
-    if (arrayAnswer[0] == arrayGuess[1] || arrayAnswer[0] == arrayGuess[2]) {
-        ball += 1;
-    }
-    if (arrayAnswer[1] == arrayGuess[0] || arrayAnswer[1] == arrayGuess[2]) {
-        ball += 1;
-    }
-    if (arrayAnswer[2] == arrayGuess[0] || arrayAnswer[2] == arrayGuess[1]) {
-        ball += 1;
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (arrayAnswer[i] == arrayGuess[j]) {
+                if (i != j) {
+                    ball += 1;
+                }
+            }
+        }
     }
 
     return ball;
